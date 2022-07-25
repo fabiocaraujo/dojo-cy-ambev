@@ -2,6 +2,7 @@
 
 describe('Funcionalidade: Criar perfil', () => {
     beforeEach(() => {
+        //cy.login('fabio@ambev.com', 'teste@123')
         cy.loginApp('fabio@ambev.com', 'teste@123')
         cy.visit('criar-perfil')
     });

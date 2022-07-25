@@ -7,7 +7,7 @@ describe('Funcionalidade: Login', () => {
     cy.visit('login')
   })
 
-  it('Deve fazer login com sucesso - Custom Command', () => {
+  it('2 - Deve fazer login com sucesso - Custom Command', () => {
     cy.login('fabio@ambev.com', 'teste@123')
     cy.visit('dashboard')
     cy.get('[data-test="dashboard-welcome"]').should('contain', ' Bem-vindo Fábio')

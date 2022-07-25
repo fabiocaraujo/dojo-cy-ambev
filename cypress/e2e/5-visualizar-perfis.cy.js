@@ -20,7 +20,7 @@ describe('Funcionalidade: Visualizar perfis', () => {
         cy.get('[data-test="profileTop-avatar"]').should('exist') 
     });
 
-    it.only('Deve navegar na paginação', () => {
+    it('Deve navegar na paginação', () => {
         cy.get('.paginationBttns [role="button"]').eq(4).click()
         cy.get('[data-test="profile-avatar"]').should('exist') 
     });

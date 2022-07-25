@@ -48,7 +48,38 @@ Cypress.Commands.add('addPerfilApp', () => {
             "instagram": "",
             "medium": ""
         }
+    }).should((resp) => {
+        expect(resp.status).to.equal(201)
     })
+})
+
+Cypress.Commands.add('loginApi', (usuario, senha) => {
+    cy.request({
+        method: 'POST', 
+        url: 'api/auth', 
+        body: {
+            email: usuario,
+            password: senha
+        }
+    }).then((response) =>{
+        expect(response.statusText).to.eq('OK')
+        return response.body.jwt
+    })
+})
+
+
+Cypress.Commands.add('getToken', (usuario, senha) => {
+    cy.request({
+        method: 'POST', 
+        url: 'api/auth', 
+        body: {
+            email: usuario,
+            password: senha
+        }
+    }).then((response) =>{
+        expect(response.statusText).to.eq('OK')
+        return response.body.jwt
+    }) 
 })
 
 

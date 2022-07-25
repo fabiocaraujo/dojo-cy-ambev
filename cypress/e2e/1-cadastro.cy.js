@@ -11,7 +11,7 @@ describe('Funcionalidade: Cadastro', () => {
         cy.screenshot()
     });
 
-    it.skip('Deve fazer o cadastro com sucesso', () => {
+    it.skip('1 - Deve fazer o cadastro com sucesso', () => {
         cy.get('[data-test="register-name"]').type('Ana')
         cy.get('[data-test="register-email"]').type('ana@ambev.com')
         cy.get('[data-test="register-password"]').type('teste@123')
@@ -54,6 +54,12 @@ describe('Funcionalidade: Cadastro', () => {
     it('Deve validar msg de erro de email com formato inválido', () => {
         cy.cadastro('Fábio', 'email_invalido', 'teste@123', 'teste@123')
         cy.get('.MuiFormHelperText-root').should('contain', 'Digite um email válido')
+    });
+
+    it.only('Depois da aula de API - Deve fazer o cadastro com sucesso - Comando Customizado e perfil via app Actions', () => {
+        cy.cadastro(dataFake.nome(), dataFake.email(), 'teste@123', 'teste@123')
+        cy.get('[data-test="dashboard-welcome"]').should('contain', 'Bem-vindo')
+        cy.addPerfilApp()
     });
 });
 
