@@ -1,0 +1,19 @@
+[
+  {
+    "nome": "Fábio",
+    "email": "fabio@ambev.com",
+    "senha": "teste@123"
+  }, 
+  {
+    "nome": "Pedro",
+    "email": "pedro@ambev.com",
+    "senha": "teste@123"
+  },
+  {
+    "nome": "Ana",
+    "email": "ana@ambev.com",
+    "senha": "teste@123"
+  }
+]
+
+
