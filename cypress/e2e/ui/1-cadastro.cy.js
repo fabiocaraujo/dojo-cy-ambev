@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 const faker = require('faker-br');
-import dataFake from "../support/utils/faker";
+import dataFake from "../../support/utils/faker";
 
 describe('Funcionalidade: Cadastro', () => {
     beforeEach(() => {

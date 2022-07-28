@@ -3,7 +3,7 @@ import dadosFake from "../../support/utils/faker";
 
 describe('Funcionalidade: Cadastro via API', () => {
    
-    it.only('Deve fazer cadastro com sucesso', () => {
+    it.skip('Deve fazer cadastro com sucesso', () => {
         cy.request({
             method: 'POST',
             url: 'api/users',

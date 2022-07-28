@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-const expPage = require('../support/pages/add-experiencia.page')
+const expPage = require('../../support/pages/add-experiencia.page')
 
 describe('Funcionalidade: Adicionar Experiência', () => {
     beforeEach(() => {

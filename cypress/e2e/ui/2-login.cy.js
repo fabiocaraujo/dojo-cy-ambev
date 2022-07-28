@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import usuario from "../fixtures/usuario.json";
-import usuarios from "../fixtures/usuarios.json";
+import usuario from "../../fixtures/usuario.json";
+import usuarios from "../../fixtures/usuarios.json";
 
 describe('Funcionalidade: Login', () => {
   beforeEach(() => {
