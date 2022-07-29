@@ -15,11 +15,11 @@ describe('Funcionalidade: Cadastro via API', () => {
         }).should((response) => {
             expect(response.status).to.equal(201)
             expect(response.body).to.have.property('jwt')
-            expect(response.duration).be.lessThan(500)
+            //expect(response.duration).be.lessThan(500)
         })
     });
 
-    it('Deve fazer cadastro com sucesso', () => {
+    it('Deve fazer cadastro com sucesso - Dados dinâmicos', () => {
         cy.request({
             method: 'POST',
             url: 'api/users',
@@ -31,7 +31,7 @@ describe('Funcionalidade: Cadastro via API', () => {
         }).should((response) => {
             expect(response.status).to.equal(201)
             expect(response.body).to.have.property('jwt')
-            expect(response.duration).be.lessThan(500)
+            //expect(response.duration).be.lessThan(500)
         })
     });
 });

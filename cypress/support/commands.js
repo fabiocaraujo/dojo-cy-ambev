@@ -82,5 +82,20 @@ Cypress.Commands.add('getToken', (usuario, senha) => {
     }) 
 })
 
+Cypress.Commands.add('criarPost', (token, texto) => {
+    cy.request({
+        method: 'POST', 
+        url: 'api/posts', 
+        headers: {
+            Cookie: token
+        }, 
+        body: {
+            text: texto
+          }
+    }).should((response) =>{
+        expect(response.status).to.equal(201)
+    })
+})
+
 
 
