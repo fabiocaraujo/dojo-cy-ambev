@@ -3,13 +3,13 @@ import dadosFake from "../../support/utils/faker";
 
 describe('Funcionalidade: Cadastro via API', () => {
    
-    it.skip('Deve fazer cadastro com sucesso', () => {
+    it.only('Deve fazer cadastro com sucesso', () => {
         cy.request({
             method: 'POST',
             url: 'api/users',
             body: {
-                "name": "ana lucia",
-                "email": "ana@p.com",
+                "name": "Fábio Vv",
+                "email": "fbi@vv.com",
                 "password": "teste@123"
             }
         }).should((response) => {

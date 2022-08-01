@@ -6,7 +6,7 @@ import dadosFake from "../../support/utils/faker";
 describe('Funcionalidade: Post via API', () => {
 let token
     beforeEach(() => {
-       cy.getToken('ana@p.com', 'teste@123').then((tkn) => {
+       cy.getToken('fbi@vv.com', 'teste@123').then((tkn) => {
             token = tkn
        })
     });

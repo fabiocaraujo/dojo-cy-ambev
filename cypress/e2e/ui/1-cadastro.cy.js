@@ -10,8 +10,10 @@ describe('Funcionalidade: Cadastro', () => {
     afterEach(() => {
         cy.screenshot()
     });
-
+   
+    // aula 1 - exercício 1 
     it.skip('1 - Deve fazer o cadastro com sucesso', () => {
+        //cy.visit('https://conexaoqa.herokuapp.com/cadastrar')
         cy.get('[data-test="register-name"]').type('Ana')
         cy.get('[data-test="register-email"]').type('ana@ambev.com')
         cy.get('[data-test="register-password"]').type('teste@123')
@@ -56,7 +58,8 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.MuiFormHelperText-root').should('contain', 'Digite um email válido')
     });
 
-    it.only('Depois da aula de API - Deve fazer o cadastro com sucesso - Comando Customizado e perfil via app Actions', () => {
+    //Aula do módulo 3 - depois da aula de api
+    it('Depois da aula de API - Deve fazer o cadastro com sucesso - Comando Customizado e perfil via app Actions', () => {
         cy.cadastro(dataFake.nome(), dataFake.email(), 'teste@123', 'teste@123')
         cy.get('[data-test="dashboard-welcome"]').should('contain', 'Bem-vindo')
         cy.addPerfilApp()
