@@ -6,7 +6,7 @@ describe('Funcionalidade: Login via API', () => {
             method: 'POST', 
             url: 'api/auth', 
             body: {
-                "email": "fabio@ambev.com",
+                "email": "fabio@teste.com",
                 "password": "teste@123"
             }
         }).should((response) =>{
@@ -19,6 +19,6 @@ describe('Funcionalidade: Login via API', () => {
     });
 
     it.only('Login usando Comando customizado', () => {
-        cy.loginApi('fabio@ambev.com', 'teste@123')
+        cy.loginApi('fabio@teste.com', 'teste@123')
     });
 });

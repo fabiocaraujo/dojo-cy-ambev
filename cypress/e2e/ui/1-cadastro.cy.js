@@ -10,12 +10,11 @@ describe('Funcionalidade: Cadastro', () => {
     afterEach(() => {
         cy.screenshot()
     });
-   
-    // aula 1 - exercício 1 
-    it.skip('1 - Deve fazer o cadastro com sucesso', () => {
+
+    it('1 - Deve fazer o cadastro com sucesso', () => {
         //cy.visit('https://conexaoqa.herokuapp.com/cadastrar')
-        cy.get('[data-test="register-name"]').type('Ana')
-        cy.get('[data-test="register-email"]').type('ana@ambev.com')
+        cy.get('[data-test="register-name"]').type('Fábio Tst')
+        cy.get('[data-test="register-email"]').type('fabio@teste.com')
         cy.get('[data-test="register-password"]').type('teste@123')
         cy.get('[data-test="register-password2"]').type('teste@123')
         cy.get('[data-test="register-submit"]').click()

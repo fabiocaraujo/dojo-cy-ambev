@@ -1,17 +1,17 @@
 [
   {
     "nome": "Fábio",
-    "email": "fabio@ambev.com",
+    "email": "fabio@teste.com",
     "senha": "teste@123"
   }, 
   {
     "nome": "Pedro",
-    "email": "pedro@ambev.com",
+    "email": "pedro@teste.com",
     "senha": "teste@123"
   },
   {
     "nome": "Ana",
-    "email": "ana@ambev.com",
+    "email": "ana@teste.com",
     "senha": "teste@123"
   }
 ]

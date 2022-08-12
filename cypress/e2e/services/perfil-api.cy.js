@@ -4,7 +4,7 @@ import perfil from "../../fixtures/perfil.json";
 describe('Funcionalidade: Perfil via API', () => {
 let token
     beforeEach(() => {
-       cy.getToken('fbi@vv.com', 'teste@123').then((tkn) => {
+       cy.getToken('fabio@teste.com', 'teste@123').then((tkn) => {
             token = tkn
        })
     });

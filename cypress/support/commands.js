@@ -5,7 +5,7 @@
 Cypress.Commands.add('login', (email, senha) => {
     cy.visit('/login')
     cy.get('[data-test="login-email"]').type(email)
-    cy.get('[data-test="login-password"]').type(senha)
+    cy.get('[data-test="login-password"]').type(senha, {log: false})
     cy.get('[data-test="login-submit"]').click()
 })
 

@@ -7,16 +7,14 @@ describe('Funcionalidade: Login', () => {
     cy.visit('login')
   })
 
-  // Aula 1 - aplicar desafio 15 minutos
-
   it('Deve fazer login com sucesso - Custom Command', () => {
-    cy.login('fabio@ambev.com', 'teste@123')
+    cy.login('fabio@teste.com', 'teste@123')
     cy.visit('dashboard')
     cy.get('[data-test="dashboard-welcome"]').should('contain', ' Bem-vindo Fábio')
   });
   
   it('Deve fazer login com sucesso', () => {
-    cy.loginApp('fabio@ambev.com', 'teste@123')
+    cy.loginApp('fabio@teste.com', 'teste@123')
     cy.visit('dashboard')
     cy.screenshot()
     cy.get('[data-test="dashboard-welcome"]').should('contain', ' Bem-vindo Fábio')
