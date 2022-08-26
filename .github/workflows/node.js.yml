@@ -6,9 +6,6 @@ jobs:
     steps:
       - name: E2E Ambev
         uses: actions/checkout@v2
-      - name: Instalando bibliotecas do node
-      - run: npm install --force
-      
       - name: Cypress run
         uses: cypress-io/github-action@v4
         
