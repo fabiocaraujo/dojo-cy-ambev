@@ -6,7 +6,14 @@ jobs:
     steps:
       - name: E2E Ambev
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Instalando bibliotecas do node
+      - run: npm install --force
+      
       - name: Cypress run
         uses: cypress-io/github-action@v4
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-results
