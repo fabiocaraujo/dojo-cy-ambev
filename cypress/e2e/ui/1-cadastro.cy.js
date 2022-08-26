@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 const faker = require('faker-br');
 import dataFake from "../../support/utils/faker";
+import cadastroPage from "../../support/pages/cadastro.page"
+
 
 describe('Funcionalidade: Cadastro', () => {
     beforeEach(() => {
@@ -63,5 +65,13 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('[data-test="dashboard-welcome"]').should('contain', 'Bem-vindo')
         cy.addPerfilApp()
     });
+
+    it.only('Deve fazer cadastro com sucesso - Usando Pages', () => {
+        var nome = faker.name.findName()
+        var email = faker.internet.email(nome)
+        cadastroPage.cadastro(nome , email, 'teste@123', 'teste@123')
+        cy.get('[data-test="dashboard-welcome"]').should('contain', ' Bem-vindo')
+    });
+
 });
 

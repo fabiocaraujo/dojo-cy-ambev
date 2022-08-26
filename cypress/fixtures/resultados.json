@@ -1,0 +1,41 @@
+{
+    "data": {
+        "autocompleteSearchSuggestions": {
+            "searches": [
+                {
+                    "term": "cerveja ipa",
+                    "attributes": [
+                        {
+                            "key": "categoria",
+                            "value": "india-pale-ale--ipa-",
+                            "labelValue": "India Pale Ale (IPA)",
+                            "__typename": "SearchSuggestionAttribute"
+                        }
+                    ],
+                    "__typename": "SearchSuggestion"
+                },
+                {
+                    "term": "kit cerveja",
+                    "attributes": null,
+                    "__typename": "SearchSuggestion"
+                },
+                {
+                    "term": "cervejas ipa",
+                    "attributes": null,
+                    "__typename": "SearchSuggestion"
+                },
+                {
+                    "term": "cerveja",
+                    "attributes": null,
+                    "__typename": "SearchSuggestion"
+                },
+                {
+                    "term": "cerveja colorado",
+                    "attributes": null,
+                    "__typename": "SearchSuggestion"
+                }
+            ],
+            "__typename": "SearchSuggestions"
+        }
+    }
+}

@@ -4,9 +4,9 @@
 
 Cypress.Commands.add('login', (email, senha) => {
     cy.visit('/login')
-    cy.get('[data-test="login-email"]').type(email)
-    cy.get('[data-test="login-password"]').type(senha, {log: false})
-    cy.get('[data-test="login-submit"]').click()
+    cy.get('[name="email"]').type(email)
+    cy.get('[data-test="login-password"]').type(senha, { log: false })
+    cy.get('.btn-primary').click()
 })
 
 Cypress.Commands.add('cadastro', (nome, email, senha, confirmaSenha) => {
@@ -56,44 +56,62 @@ Cypress.Commands.add('addPerfilApp', () => {
 
 Cypress.Commands.add('loginApi', (usuario, senha) => {
     cy.request({
-        method: 'POST', 
-        url: 'api/auth', 
+        method: 'POST',
+        url: 'api/auth',
         body: {
             email: usuario,
             password: senha
         }
-    }).then((response) =>{
+    }).then((response) => {
         expect(response.statusText).to.eq('OK')
         return response.body.jwt
     })
 })
 
+Cypress.Commands.add('loginAPP', (usuario, senha) => {
+    cy.request({
+        method: 'POST',
+        url: '/api/auth',
+        body: {
+            "email": usuario,
+            "password": senha
+        }
+    }).then((response) => {
+        //return response.body.jwt
+        cy.setCookie('jwt2', response.body.jwt)
+    })
+})
+
+
+
+
+
 
 Cypress.Commands.add('getToken', (usuario, senha) => {
     cy.request({
-        method: 'POST', 
-        url: 'api/auth', 
+        method: 'POST',
+        url: 'api/auth',
         body: {
             email: usuario,
             password: senha
         }
-    }).then((response) =>{
+    }).then((response) => {
         expect(response.statusText).to.eq('OK')
         return response.body.jwt
-    }) 
+    })
 })
 
 Cypress.Commands.add('criarPost', (token, texto) => {
     cy.request({
-        method: 'POST', 
-        url: 'api/posts', 
+        method: 'POST',
+        url: 'api/posts',
         headers: {
             Cookie: token
-        }, 
+        },
         body: {
             text: texto
-          }
-    }).should((response) =>{
+        }
+    }).should((response) => {
         expect(response.status).to.equal(201)
     })
 })
