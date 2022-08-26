@@ -9,7 +9,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
 
-      - name: Generate Allure Report
+      - name: Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
         with:
