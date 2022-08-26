@@ -1,0 +1,17 @@
+name: CI Ambev
+
+on:
+  push:
+    branches: [ "main" ]
+ 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Instalando as dependencias do node
+      run: npm install --force
+    - name: exceutando o cypress
+    - run: npx cypress run 
+        echo executando os testes do cypress
