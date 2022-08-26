@@ -9,8 +9,17 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-results
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
